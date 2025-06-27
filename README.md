@@ -6,7 +6,7 @@ A console application for generating Dataverse tables, field and relations from 
 
 A Console application for generating Dataverse Tables, Columns and Relations between tables al from the input of a Mermaid ERDiagram.
 This tool can for now create some basic fields like:
-- int, 
+- int (0 - 1000000) 
 - datetime (dateonly)
 - decimal (-1000000 - 1000000, precision 2)
 - boolean (true/1 or false/0)
