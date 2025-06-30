@@ -1,11 +1,5 @@
 # DataverseGenerator
 
-![License](https://img.shields.io/github/license/RichardWie/dataversegenerator)
-![Release](https://img.shields.io/github/v/release/RichardWie/dataversegenerator)
-![Build](https://img.shields.io/github/actions/workflow/status/RichardWie/dataversegenerator/ci.yml?branch=main)
-![Issues](https://img.shields.io/github/issues/RichardWie/dataversegenerator)
-![Pull Requests](https://img.shields.io/github/issues-pr/RichardWie/dataversegenerator)
-
 > A **console application** for generating Dataverse tables, fields, and relationships directly from a **Mermaid Entity Relation Diagram (ERD)**.
 
 ---
