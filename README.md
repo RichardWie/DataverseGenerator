@@ -1,26 +1,82 @@
 # DataverseGenerator
-A console application for generating Dataverse tables, field and relations from a Mermaid Entity Relation Diagram
 
+![License](https://img.shields.io/github/license/RichardWie/dataversegenerator)
+![Release](https://img.shields.io/github/v/release/RichardWie/dataversegenerator)
+![Build](https://img.shields.io/github/actions/workflow/status/RichardWie/dataversegenerator/ci.yml?branch=main)
+![Issues](https://img.shields.io/github/issues/RichardWie/dataversegenerator)
+![Pull Requests](https://img.shields.io/github/issues-pr/RichardWie/dataversegenerator)
 
-## Features
+> A **console application** for generating Dataverse tables, fields, and relationships directly from a **Mermaid Entity Relation Diagram (ERD)**.
 
-A Console application for generating Dataverse Tables, Columns and Relations between tables al from the input of a Mermaid ERDiagram.
-This tool can for now create some basic fields like:
-- int (0 - 1000000) 
-- datetime (dateonly)
-- decimal (-1000000 - 1000000, precision 2)
-- boolean (true/1 or false/0)
-- money (-1000000 - 1000000, precision 2)
-Also the tool only create one-to-many relations, so if you need many-to-many relations you should create your own intersect table in the ERDiagram.
-There is a second file needed for running the tool, this one you are able to expand yourself. This file contains the Common Datamodel tablenames, so if you reference one of these table it will not prefix thes.
-With this file you are also able to add your own tables, with prefixes allready applied if you're creating lookups to these tables.
+---
 
-## Security
+## ✨ Features
 
-This tool uses the default AppId for now, aswell as using your user account for the authentication and authorisation. In later updates expect multiple ways of connecting to Dataverse.
+✅ **Generate Dataverse Tables, Columns, and Relations**
 
-## Usage
+- Converts your Mermaid ERD into actual Dataverse tables.
+- Creates basic field types including:
+  - `int` (range: 0 – 1,000,000)
+  - `datetime` (date only)
+  - `decimal` (-1,000,000 to +1,000,000, precision 2)
+  - `boolean` (true/1 or false/0)
+  - `money` (-1,000,000 to +1,000,000, precision 2)
 
-To run the tool download the executable, XML and provide your own MMD file.
+✅ **Supports One-to-Many Relations**
 
-Next run the following command: dataversegenerator.exe <url> <mmd-file> <prefix> [--dry-run] [--solution Name] [--log-level Level] [--log-file Path] [--log-json]
+- Generates only one-to-many relationships.
+- For many-to-many relationships, create your own **intersect tables** within your Mermaid ERD.
+
+✅ **Common Data Model XML Reference**
+
+- Requires an XML file containing **Common Data Model table names**.
+- When referencing tables listed in this file, they will **not be prefixed**.
+- Extend this file with your own tables (including prefixes) to use them seamlessly as lookup references in your ERD.
+
+---
+
+## 🔒 Security
+
+Currently, the tool:
+
+- Uses the **default AppId**.
+- Authenticates and authorises using your **user account**.
+
+---
+
+## 🚀 Usage
+
+1. **Download** the executable, the XML reference file, and prepare your own Mermaid (.mmd) file.
+
+2. **Run the tool** with the following command:
+
+```bash
+dataversegenerator.exe <url> <mmd-file> <prefix> [--dry-run] [--solution Name] [--log-level Level] [--log-file Path] [--log-json]
+```
+
+| Argument            | Description                                                         |
+| ------------------- | ------------------------------------------------------------------- |
+| `<url>`             | Dataverse environment URL                                           |
+| `<mmd-file>`        | Path to your Mermaid ER diagram file                                |
+| `<prefix>`          | Prefix for newly created tables                                     |
+| `--dry-run`         | *(Optional)* Shows what would be generated without applying changes |
+| `--solution Name`   | *(Optional)* Target solution for creation                           |
+| `--log-level Level` | *(Optional)* Sets logging level (e.g. info, debug)                  |
+| `--log-file Path`   | *(Optional)* Outputs logs to a specified file                       |
+| `--log-json`        | *(Optional)* Outputs logs in JSON format                            |
+
+## 💡 Notes
+
+Ensure your Mermaid diagram syntax is valid and aligned with the supported field types and relationships.
+For many-to-many relations, manually define intersect tables within your ERD.
+
+---
+
+## 🔭 Roadmap
+
+Planned features include:
+- Support for additional field types.
+- Many-to-many relationship generation.
+- Multiple authentication methods for Dataverse connection.
+- XRMToolbox plugin
+
