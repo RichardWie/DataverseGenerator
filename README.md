@@ -62,6 +62,7 @@ dataversegenerator.exe <url> <mmd-file> <prefix> [--dry-run] [--solution Name] [
 ## 💡 Notes
 
 Ensure your Mermaid diagram syntax is valid and aligned with the supported field types and relationships.
+
 For many-to-many relations, manually define intersect tables within your ERD.
 
 ---
